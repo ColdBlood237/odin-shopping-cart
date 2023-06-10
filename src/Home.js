@@ -5,7 +5,7 @@ function Home() {
     <>
       <Navbar />
       <h1 className="welcome">Welcome to Squares R Us</h1>
-      <p className="slogan">We serve all your square needs</p>
+      <h4 className="slogan">We serve all your square needs</h4>
       <p className="note">
         Now hiring: We are in desperate need of web designers. For more
         information check our{" "}

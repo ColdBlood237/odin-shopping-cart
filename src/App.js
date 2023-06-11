@@ -14,7 +14,7 @@ function App() {
         <h4>Squares R Us</h4>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart">Cart({cart.length})</Link>
       </div>
 
       <Routes>

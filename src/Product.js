@@ -2,18 +2,23 @@ import { useState } from "react";
 
 function Product({ id, name, imgLink, price, cart, setCart }) {
   console.log(cart);
+  console.log(id);
 
   const [quantity, setQuantity] = useState(1);
 
   function addToCart(e) {
     e.preventDefault();
     if (!inCart()) {
-      setCart(...cart, {
-        name,
-        imgLink,
-        price,
-        quantity: quantity,
-      });
+      setCart([
+        ...cart,
+        {
+          id: id,
+          name,
+          imgLink,
+          price,
+          quantity: quantity,
+        },
+      ]);
     } else {
       incrementQuantity();
     }
@@ -21,26 +26,26 @@ function Product({ id, name, imgLink, price, cart, setCart }) {
 
   function inCart() {
     cart.forEach((product) => {
-      if (product.name === name) return true;
+      if (product.id === id) return true;
     });
     return false;
   }
 
   function incrementQuantity() {
     cart.forEach((product) => {
-      if (product.name === name) {
+      if (product.id === id) {
         product.quantity += quantity;
       }
     });
   }
 
-  function minusClickHandler(e) {
-    e.target.value--;
-    setQuantity(quantity - 1);
+  function minusClickHandler() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   }
 
-  function plusClickHandler(e) {
-    e.target.value++;
+  function plusClickHandler() {
     setQuantity(quantity + 1);
   }
 
@@ -53,17 +58,21 @@ function Product({ id, name, imgLink, price, cart, setCart }) {
       <div className="product-img-placeholder"></div>
       <p className="product-price">${price}</p>
       <form onSubmit={addToCart}>
-        <button>Add to cart</button>
-        <button onClick={minusClickHandler}>-</button>
+        <button type="submit">Add to cart</button>
+        <button type="button" onClick={minusClickHandler}>
+          -
+        </button>
         <input
           onChange={onChangeHandler}
           id={id}
           type="number"
-          defaultValue="1"
+          value={quantity}
           min="1"
           step="1"
         ></input>
-        <button onClick={plusClickHandler}>+</button>
+        <button type="button" onClick={plusClickHandler}>
+          +
+        </button>
       </form>
     </div>
   );

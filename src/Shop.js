@@ -2,6 +2,14 @@ import Product from "./Product";
 import uniqid from "uniqid";
 
 function Shop({ cart, setCart }) {
+  const products = [
+    {
+      id: "p-" + { uniqid },
+      name: "Blue Square",
+      price: "20.49",
+    },
+  ];
+
   return (
     <>
       <h1>Squares for sell</h1>

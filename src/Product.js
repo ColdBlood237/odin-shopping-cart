@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Product({ id, name, price, cart, setCart }) {
+function Product({ id, name, color, price, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
 
   function addToCart(e) {
@@ -53,7 +53,7 @@ function Product({ id, name, price, cart, setCart }) {
   return (
     <div className="product-card">
       <h5 className="product-name">{name}</h5>
-      <div className="product-img-placeholder"></div>
+      <div className={color}></div>
       <p className="product-price">${price}</p>
       <form onSubmit={addToCart}>
         <button type="submit">Add to cart</button>

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Shop from "./Shop";
 import Cart from "./Cart";
+import Troll from "./Troll";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home cart={cart} />} />
         <Route path="/shop" element={<Shop cart={cart} setCart={setCart} />} />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/troll" element={<Troll />} />
       </Routes>
     </BrowserRouter>
   );

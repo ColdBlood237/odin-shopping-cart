@@ -1,3 +1,40 @@
-function Cart() {}
+import { Link } from "react-router-dom";
+import ProductInCart from "./ProductInCart";
+
+function Cart({ cart, setCart }) {
+  function calculateTotal() {
+    return Number(
+      cart
+        .reduce((total, currentProduct) => {
+          return total + currentProduct.price * currentProduct.quantity;
+        }, 0.0)
+        .toFixed(2)
+    );
+  }
+
+  return (
+    <>
+      <h1>Cart</h1>
+      {cart.map((p) => {
+        return (
+          <ProductInCart
+            id={p.id}
+            key={p.id}
+            name={p.name}
+            color={p.color}
+            price={p.price}
+            quantity={p.quantity}
+            cart={cart}
+            setCart={setCart}
+          />
+        );
+      })}
+      <p>Total: ${calculateTotal()}</p>
+      <button>
+        <Link to="/troll">Buy Squares</Link>
+      </button>
+    </>
+  );
+}
 
 export default Cart;

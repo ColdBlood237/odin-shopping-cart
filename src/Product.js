@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-function Product({ id, name, imgLink, price, cart, setCart }) {
-  console.log(cart);
-  console.log(id);
-
+function Product({ id, name, price, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
 
   function addToCart(e) {
@@ -12,9 +9,8 @@ function Product({ id, name, imgLink, price, cart, setCart }) {
       setCart([
         ...cart,
         {
-          id: id,
+          id,
           name,
-          imgLink,
           price,
           quantity: quantity,
         },
@@ -25,15 +21,17 @@ function Product({ id, name, imgLink, price, cart, setCart }) {
   }
 
   function inCart() {
+    let inCart = false;
     cart.forEach((product) => {
-      if (product.id === id) return true;
+      console.log(product.name, name);
+      if (product.name === name) inCart = true;
     });
-    return false;
+    return inCart;
   }
 
   function incrementQuantity() {
     cart.forEach((product) => {
-      if (product.id === id) {
+      if (product.name === name) {
         product.quantity += quantity;
       }
     });

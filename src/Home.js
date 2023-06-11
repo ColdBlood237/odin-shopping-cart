@@ -1,9 +1,6 @@
-import Navbar from "./Navbar";
-
-function Home() {
+function Home({ cart }) {
   return (
     <>
-      <Navbar />
       <h1 className="welcome">Welcome to Squares R Us</h1>
       <h4 className="slogan">We serve all your square needs</h4>
       <p className="note">

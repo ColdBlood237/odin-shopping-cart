@@ -5,6 +5,7 @@ import Home from "./Home";
 import Shop from "./Shop";
 import Cart from "./Cart";
 import Troll from "./Troll";
+import "./styles.css";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -13,9 +14,11 @@ function App() {
     <BrowserRouter>
       <div className="navbar">
         <h4>Squares R Us</h4>
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/cart">Cart({cart.length})</Link>
+        <div className="nav-btns">
+          <Link to="/">Home</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/cart">Cart({cart.length})</Link>
+        </div>
       </div>
 
       <Routes>

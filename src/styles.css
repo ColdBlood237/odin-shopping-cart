@@ -1,0 +1,76 @@
+#root {
+  padding: 0 200px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btns {
+  display: flex;
+  gap: 16px;
+}
+
+.product-card {
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 8px;
+  height: 300px;
+  width: 200px;
+}
+
+.product-card h5 {
+  margin-top: 0;
+}
+
+.product-card form {
+  display: flex;
+}
+
+.product-card input {
+  border: 0;
+  width: 100%;
+}
+
+.img-placeholder {
+  height: 130px;
+}
+
+.products-wrapper {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 32px;
+}
+
+.product-in-cart {
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 8px;
+  height: 220px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-in-cart h5 {
+  margin-top: 0px;
+}
+
+.img-in-cart-placeholder {
+  height: 50px;
+  width: 50px;
+}

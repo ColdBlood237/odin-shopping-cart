@@ -62,19 +62,21 @@ function Shop({ cart, setCart }) {
   return (
     <>
       <h1>Squares for sell</h1>
-      {products.map((p) => {
-        return (
-          <Product
-            id={p.id}
-            key={p.id}
-            name={p.name}
-            color={p.color}
-            price={p.price}
-            cart={cart}
-            setCart={setCart}
-          />
-        );
-      })}
+      <div className="products-wrapper">
+        {products.map((p) => {
+          return (
+            <Product
+              id={p.id}
+              key={p.id}
+              name={p.name}
+              color={p.color}
+              price={p.price}
+              cart={cart}
+              setCart={setCart}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }

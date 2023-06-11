@@ -15,20 +15,22 @@ function Cart({ cart, setCart }) {
   return (
     <>
       <h1>Cart</h1>
-      {cart.map((p) => {
-        return (
-          <ProductInCart
-            id={p.id}
-            key={p.id}
-            name={p.name}
-            color={p.color}
-            price={p.price}
-            quantity={p.quantity}
-            cart={cart}
-            setCart={setCart}
-          />
-        );
-      })}
+      <div className="products-wrapper">
+        {cart.map((p) => {
+          return (
+            <ProductInCart
+              id={p.id}
+              key={p.id}
+              name={p.name}
+              color={p.color}
+              price={p.price}
+              quantity={p.quantity}
+              cart={cart}
+              setCart={setCart}
+            />
+          );
+        })}
+      </div>
       <p>Total: ${calculateTotal()}</p>
       <button>
         <Link to="/troll">Buy Squares</Link>

@@ -11,6 +11,7 @@ function Product({ id, name, color, price, cart, setCart }) {
         {
           id,
           name,
+          color,
           price,
           quantity: quantity,
         },
@@ -23,7 +24,6 @@ function Product({ id, name, color, price, cart, setCart }) {
   function inCart() {
     let inCart = false;
     cart.forEach((product) => {
-      console.log(product.name, name);
       if (product.name === name) inCart = true;
     });
     return inCart;
@@ -53,7 +53,7 @@ function Product({ id, name, color, price, cart, setCart }) {
   return (
     <div className="product-card">
       <h5 className="product-name">{name}</h5>
-      <div className={color}></div>
+      <div className="img-placeholder" style={{ backgroundColor: color }}></div>
       <p className="product-price">${price}</p>
       <form onSubmit={addToCart}>
         <button type="submit">Add to cart</button>

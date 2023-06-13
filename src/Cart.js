@@ -13,7 +13,7 @@ function Cart({ cart, setCart }) {
   }
 
   return (
-    <>
+    <div data-testid="cart">
       <h1>Cart</h1>
       <div className="products-wrapper">
         {cart.map((p) => {
@@ -35,7 +35,7 @@ function Cart({ cart, setCart }) {
       <button>
         <Link to="/troll">Buy Squares</Link>
       </button>
-    </>
+    </div>
   );
 }
 

@@ -6,8 +6,8 @@ function Product({ id, name, color, price, cart, setCart }) {
   function addToCart(e) {
     e.preventDefault();
     if (!inCart()) {
-      setCart([
-        ...cart,
+      setCart((prevCart) => [
+        ...prevCart,
         {
           id,
           name,

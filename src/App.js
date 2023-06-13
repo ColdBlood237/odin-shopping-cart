@@ -12,7 +12,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="navbar">
+      <div data-testid="navbar" className="navbar">
         <h4>Squares R Us</h4>
         <div className="nav-btns">
           <Link to="/">Home</Link>

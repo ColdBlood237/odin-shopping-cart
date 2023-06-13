@@ -1,6 +1,6 @@
 function Home({ cart }) {
   return (
-    <>
+    <div data-testid="home">
       <h1 className="welcome">Welcome to Squares R Us</h1>
       <h4 className="slogan">We serve all your square needs</h4>
       <p className="note">
@@ -14,7 +14,7 @@ function Home({ cart }) {
           careers page.
         </a>
       </p>
-    </>
+    </div>
   );
 }
 

@@ -60,9 +60,9 @@ function Shop({ cart, setCart }) {
   ];
 
   return (
-    <>
+    <div data-testid="shop">
       <h1>Squares for sell</h1>
-      <div className="products-wrapper">
+      <div data-testid="shop-products-wrapper" className="products-wrapper">
         {products.map((p) => {
           return (
             <Product
@@ -77,7 +77,7 @@ function Shop({ cart, setCart }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
